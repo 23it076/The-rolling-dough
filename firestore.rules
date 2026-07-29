@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Bookings collection
+    match /bookings/{document} {
+      allow read, update, delete: if request.auth != null;
+      allow create: if true;
+    }
+    
+    // Menu collection
+    match /menu/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Gallery collection
+    match /gallery/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Reviews collection
+    match /reviews/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}
