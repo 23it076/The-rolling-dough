@@ -40,12 +40,7 @@ export default function Navbar() {
 
         {/* CTAs */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link 
-            to="/admin" 
-            className="px-4 py-2 border border-pizzaDark/20 hover:border-pizzaOrange text-pizzaText font-poppins text-xs font-semibold uppercase tracking-widest transition-all duration-300"
-          >
-            Portal Login
-          </Link>
+
           <a 
             href="#booking-form" 
             onClick={(e) => scrollIntoId(e, "booking-form")}
@@ -92,13 +87,7 @@ export default function Navbar() {
               >
                 Book Your Event
               </a>
-              <Link
-                to="/admin"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 border border-pizzaDark/20 text-pizzaDark font-poppins text-xs font-semibold uppercase tracking-widest"
-              >
-                Admin Panel Login
-              </Link>
+
             </div>
           </motion.div>
         )}
