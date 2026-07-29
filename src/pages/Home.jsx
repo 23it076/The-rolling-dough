@@ -23,8 +23,6 @@ export default function Home() {
   const [selectedIngredientModal, setSelectedIngredientModal] = useState(null);
   const [activeLocation, setActiveLocation] = useState("Ahmedabad");
 
-  // Video State
-  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
 
   // ----------------------------------------------------
   // MULTI-STEP BOOKING WIZARD STATE
@@ -203,13 +201,15 @@ export default function Home() {
               <span>Book Your Event</span>
               <ArrowRight size={16} />
             </a>
-            <button 
-              onClick={() => setIsPlayingVideo(true)}
+            <a 
+              href="https://www.instagram.com/reel/DaNQoPfS3_i/?igsh=bW13cm81anFuZDAx"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-poppins font-semibold uppercase tracking-widest transition-all duration-300 text-sm flex items-center justify-center gap-2"
             >
               <Play size={16} fill="currentColor" className="text-pizzaOrange" />
               <span>Watch Experience</span>
-            </button>
+            </a>
           </motion.div>
 
           {/* Hero Statistics Bar */}
@@ -971,37 +971,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Experience Video Modal */}
-      <AnimatePresence>
-        {isPlayingVideo && (
-          <div 
-            className="fixed inset-0 z-50 bg-pizzaDark/95 flex items-center justify-center p-4"
-            onClick={() => setIsPlayingVideo(false)}
-          >
-            <div className="w-full max-w-4xl bg-black relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
-              <button 
-                onClick={() => setIsPlayingVideo(false)}
-                className="absolute -top-12 right-0 text-white hover:text-pizzaOrange flex items-center gap-2 font-poppins text-xs uppercase tracking-wider"
-              >
-                <span>Close</span>
-              </button>
-              <div className="aspect-video">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-                  title="Pizza Experience Showreel" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
-
     </div>
   );
 }
